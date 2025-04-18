@@ -42,8 +42,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "",
-    "directory": ""
+    "url": "https://github.com/harinivas-28/timer-vsce",
+    "directory": "timer-vsce"
   },
   "keywords": [
     "vscode",
