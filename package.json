@@ -1,0 +1,76 @@
+{
+  "name": "timer",
+  "displayName": "Timer For VS Code",
+  "publisher": "Harinivas",
+  "description": "A simple timer extension for Visual Studio Code.Best for Pomodoro technique and Competitive Programming.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "timer-sidebar",
+          "title": "Timer",
+          "icon": "resources/clock.svg"
+        }
+      ]
+    },
+    "views": {
+      "timer-sidebar": [
+        {
+          "id": "timerView",
+          "name": "Timer",
+          "type": "webview",
+          "icon": "resources/clock.svg",
+          "when": "view == timerView"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "vscode-timer.start",
+        "title": "Start Timer"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "",
+    "directory": ""
+  },
+  "keywords": [
+    "vscode",
+    "timer",
+    "pomodoro",
+    "extension"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node ./esbuild.js",
+    "watch": "node ./esbuild.js --watch",
+    "lint": "eslint src --ext ts",
+    "compile": "tsc -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "14.x",
+    "eslint": "^7.27.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "glob": "^7.1.7",
+    "mocha": "^8.4.0",
+    "typescript": "^4.3.2",
+    "vscode-test": "^1.5.2"
+  }
+}
